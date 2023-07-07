@@ -1,0 +1,89 @@
+main{
+    width: 100vw;
+    // min-height: 100vh;
+    // min-height: 100svh;
+    display: grid;
+    // place-content: center;
+    .banner{
+        height: 25vh;
+        display: grid;
+        justify-items: center;
+        align-content: end;
+        padding: 1rem;
+    }
+    h1{
+        text-align: center;
+    }
+    .feed{
+        margin: 1rem;
+        display: grid;
+        justify-content: center;
+        form{
+            position: relative;
+            z-index: 1;
+            margin-bottom: 4rem;
+            img{
+                position: absolute;
+                z-index: 2;
+                top: 50%;
+                transform: translateY(-50%);
+                left: 0.5rem;
+            }
+            input{
+                background-color: var(--background-body);
+                border: 2px solid var(--bg-accent);
+                padding: 0.5rem 2.5rem;
+                border-radius: 1rem;
+                width: 100%;
+                transition: border var(--transition-speed-fast) ease;
+                &:hover, &:focus{
+                    border: 2px solid var(--bg-color-blue-500);
+                    outline: none;
+                }
+            }
+        }
+        .card-list{
+            display: grid;
+            gap: 1rem;
+            
+        }
+    }
+}
+@media (max-width: 760px){
+    .banner{
+        margin-top: 4rem;
+    }
+    form{
+        width: 100%;
+    }
+}
+@media (min-width: 761px){
+    .banner{
+        margin-top: 5rem;
+    }
+    form{
+        width: 650px;
+        grid-column: span 2;
+        input{
+            width: 100%;
+        }
+    }
+    .card-list{
+        grid-template-columns: 1fr 1fr;
+        .post-card{
+            width: 350px;
+        }
+    }
+}
+@media (min-width: 1300px){
+    .banner{
+        margin-top: 7rem;
+    }
+    .card-list{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+img{
+    max-width: 100%;
+}

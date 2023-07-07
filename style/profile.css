@@ -1,0 +1,41 @@
+main {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  padding: 1rem;
+}
+
+.posts {
+  display: grid;
+  display: grid;
+  gap: 1rem;
+}
+
+@media (max-width: 760px) {
+  h1 {
+    margin-top: 4rem;
+  }
+  .posts {
+    margin-top: 4rem;
+  }
+}
+@media (min-width: 761px) {
+  h1 {
+    margin-top: 8rem;
+  }
+  .posts {
+    margin-top: 4rem;
+    grid-template-columns: 1fr 1fr;
+  }
+  .posts .post-card {
+    width: 350px;
+  }
+}
+@media (min-width: 1300px) {
+  h1 {
+    margin-top: 10rem;
+  }
+  .posts {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}/*# sourceMappingURL=profile.css.map */
