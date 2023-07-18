@@ -31,4 +31,5 @@
 .post-card .text .buttons {
   display: flex;
   gap: 1rem;
+  z-index: 100;
 }/*# sourceMappingURL=card.css.map */

@@ -12,17 +12,16 @@ const ProfilePage = () => {
   const {data: session} = useSession();
   const [posts, setPosts] = useState([]);
 
-  useEffect(() => {
-    const fetchCards = async () => {
-      const response = await fetch(`/api/users/${session?.user.id}/posts`)
-      const data = await response.json();
-      setPosts(data);
-    }
+  const fetchCards = async () => {
+    const response = await fetch(`/api/users/${session?.user.id}/posts`)
+    const data = await response.json();
+    setPosts(data);
+  }
 
-    if (session?.user.id) {
-      fetchCards();
-    }
-  }, [])
+  if (session?.user.id) {
+    fetchCards();
+  }
+  
 
   const handleEdit = (post) => {
     router.push(`/edit-post?id=${post._id}`)

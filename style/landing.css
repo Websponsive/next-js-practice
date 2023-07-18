@@ -16,6 +16,7 @@ main .feed {
   margin: 1rem;
   display: grid;
   justify-content: center;
+  justify-items: center;
 }
 main .feed form {
   position: relative;
@@ -62,9 +63,6 @@ main .feed .card-list {
     width: 650px;
     grid-column: span 2;
   }
-  form input {
-    width: 100%;
-  }
   .card-list {
     grid-template-columns: 1fr 1fr;
   }
@@ -78,6 +76,10 @@ main .feed .card-list {
   }
   .card-list {
     grid-template-columns: 1fr 1fr 1fr;
+  }
+  form {
+    width: 650px;
+    grid-column: span 3;
   }
 }
 img {

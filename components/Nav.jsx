@@ -4,9 +4,11 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { signIn, signOut, useSession, getProviders } from 'next-auth/react'
+import { useRouter } from "next/navigation";
 
 const Nav = () => {
   const { data: session } = useSession();
+  const router = useRouter();
 
   const [providers, setProviders] = useState(null);
 
@@ -33,7 +35,10 @@ const Nav = () => {
         {session?.user ? (
           <>
             <Link href="/new-post" className="accent-btn light small-text">New Post</Link>
-            <button onClick={signOut} className="outline-btn dark small-text hide-small">Log Out</button>
+            <button onClick={() => {
+              signOut();
+              router.push('/')
+            }} className="outline-btn dark small-text hide-small">Log Out</button>
             <Link href="/profile">
               <Image src={session?.user.image}
               width={44}

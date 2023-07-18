@@ -1,18 +1,23 @@
 'use client'
 
-import {useState} from 'react'
 import Image from 'next/image'
 import { useSession } from 'next-auth/react'
 import { usePathname, useRouter } from 'next/navigation'
 import '@style/card.css'
 
-const Card = ({ post, handleClick, handleDelete, handleEdit}) => {
+const Card = ({ post, handleDelete, handleEdit, id}) => {
   const {data: session} = useSession();
   const pathName = usePathname();
   const router = useRouter();
 
+
+  const handleClick = () => {
+    if(pathName === '/profile') return
+    router.push(`/post/${id}`)
+  }
+
   return (
-    <div className='post-card'>
+    <div className='post-card' onClick={handleClick}>
         <img src={post.image} alt="image of this car" />
         <div className="text">
             <h2 className="paragraph dark">{post.title}</h2>

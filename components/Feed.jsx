@@ -10,6 +10,7 @@ const CardList = ({data, handleClick}) => {
             {data.map((post) => (
                 <Card
                     key={post._id}
+                    id={post._id}
                     post={post}
                     handleClick={handleClick}
                 />

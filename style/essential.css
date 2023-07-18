@@ -94,22 +94,6 @@ html, body {
   height: 100%;
 }
 
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background-color: var(--bg-color-blue-600);
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: var(--bg-color-blue-400);
-  border-radius: 10px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background-color: var(--bg-color-blue-200);
-}
-
 /* Navbar Styles */
 .navbar {
   --background: var(--f-color-light);

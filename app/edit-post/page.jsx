@@ -10,7 +10,8 @@ import Form from '@components/Form'
 const EditPost = () => {
     const router = useRouter();
     const searchParams = useSearchParams();
-    const postId = searchParams.get('id')
+    const postId = searchParams.get('id');
+    console.log(postId);
     const {data: session} = useSession();
 
     const [submitting, setSubmitting] = useState(false)
